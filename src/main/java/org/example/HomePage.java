@@ -1,5 +1,6 @@
 package org.example;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -24,6 +25,7 @@ public class HomePage extends Base{
         super(driver);
     }
 
+    @Step(value = "Click on the dropdown menu")
     public AllContactsPage menuContact(){
         Actions actions = new Actions(driver);
         actions
@@ -37,6 +39,7 @@ public class HomePage extends Base{
         return new AllContactsPage(driver);
     }
 
+    @Step(value = "Click on the dropdown menu")
     public AllMyProjectPage menuProject(){
         Actions actions = new Actions(driver);
         actions

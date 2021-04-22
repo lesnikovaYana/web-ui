@@ -1,5 +1,6 @@
 package org.example;
 
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -8,6 +9,7 @@ import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.logging.LogType;
 
 import java.util.concurrent.TimeUnit;
 
@@ -36,6 +38,13 @@ public class BaseTest
 
     @AfterEach
     public void tearDown() {
+        driver
+                .manage()
+                .logs()
+                .get(LogType.BROWSER)
+                .getAll()
+                .forEach(System.out::println);
+
         driver.quit();
     }
 }

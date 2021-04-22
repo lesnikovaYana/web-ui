@@ -1,5 +1,6 @@
 package org.example;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,11 +19,13 @@ public class AllContactsPage extends Base {
         super(driver);
     }
 
+    @Step(value = "Click button 'Create contact person'")
     public ContactCreatePage clickCreateContactButton() {
         createButton.click();
         return new ContactCreatePage(driver);
     }
 
+    @Step(value = "Check alert")
     public AllContactsPage checkNewContactPopUp() {
         String message = wait10second.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(
                 "div[class='message']"))).getText();
