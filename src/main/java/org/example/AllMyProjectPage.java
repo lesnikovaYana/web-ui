@@ -1,5 +1,6 @@
 package org.example;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,11 +18,13 @@ public class AllMyProjectPage extends Base{
         super(driver);
     }
 
+    @Step(value = "Click button 'Create a project'")
     public ProjectCreatePage clickCreateMyProjectButton() {
         createButton.click();
         return new ProjectCreatePage(driver);
     }
 
+    @Step(value = "Check alert")
     public AllMyProjectPage checkNewProjectPopUp() {
         String message = wait10second.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(
                 "div[class='message']"))).getText();

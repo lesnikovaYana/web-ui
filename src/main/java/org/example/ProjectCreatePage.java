@@ -1,7 +1,9 @@
 package org.example;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -54,6 +56,7 @@ public class ProjectCreatePage extends Base{
         super(driver);
     }
 
+    @Step(value = "Enter name")
     public ProjectCreatePage enterName() {
         nameInput.sendKeys(UUID.randomUUID().toString());
         return this;
@@ -69,6 +72,7 @@ public class ProjectCreatePage extends Base{
                 .until(ExpectedConditions.elementToBeClickable(element));
     }
 
+    @Step(value = "Enter company")
     public ProjectCreatePage enterCompany(String company){
         companyButton.click();
         waitForVisibility(companyInput);
@@ -78,6 +82,7 @@ public class ProjectCreatePage extends Base{
         return this;
     }
 
+    @Step(value = "Enter contact")
     public ProjectCreatePage enterContact(String contact){
         waitToBeClickable(contactButton);
         contactButton.click();
@@ -88,39 +93,46 @@ public class ProjectCreatePage extends Base{
         return this;
     }
 
+    @Step(value = "Enter business unit")
     public ProjectCreatePage enterBusinessUnit(int value){
         Select businessUnitDropDown = new Select(businessUnit);
         businessUnitDropDown.selectByValue(String.valueOf(value));
         return this;
     }
 
+    @Step(value = "Enter curator")
     public ProjectCreatePage enterCurator(int value){
         Select curatorDropDown = new Select(curator);
         curatorDropDown.selectByValue(String.valueOf(value));
         return this;
     }
 
+    @Step(value = "Enter project manager")
     public ProjectCreatePage enterProjectManager(int value){
         Select projectManagerDropDown = new Select(projectManager);
         projectManagerDropDown.selectByValue(String.valueOf(value));
         return this;
     }
 
+    @Step(value = "Enter administrator")
     public ProjectCreatePage enterAdministrator(int value){
         Select administratorDropDown = new Select(administrator);
         administratorDropDown.selectByValue(String.valueOf(value));
         return this;
     }
 
+    @Step(value = "Enter manager")
     public ProjectCreatePage enterManager(int value){
         Select managerDropDown = new Select(manager);
         managerDropDown.selectByValue(String.valueOf(value));
         return this;
     }
 
+    @Step(value = "Click button save and close")
     public AllMyProjectPage saveAndClose(){
         saveButton.click();
         return new AllMyProjectPage(driver);
     }
 
 }
+

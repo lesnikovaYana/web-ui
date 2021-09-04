@@ -1,10 +1,15 @@
 package org.example;
 
+import io.qameta.allure.Feature;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+@Feature("Project create")
 public class ProjectTest extends BaseTest{
 
     @Test
+    @DisplayName("Create a new project")
     public void createProjectCreatePositiveTest(){
         new LoginPage(driver)
                 .authorization(Configuration.STUDENT_LOGIN, Configuration.STUDENT_PASSWORD)
@@ -22,3 +27,4 @@ public class ProjectTest extends BaseTest{
                 .checkNewProjectPopUp();
     }
 }
+
