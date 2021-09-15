@@ -32,5 +32,4 @@ public class AllContactsPage extends Base {
         assertTrue(message.contains("Контактное лицо сохранено"));
         return this;
     }
-
 }

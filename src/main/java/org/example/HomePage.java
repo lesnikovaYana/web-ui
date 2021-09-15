@@ -50,5 +50,4 @@ public class HomePage extends Base{
                 .perform();
         return new AllMyProjectPage(driver);
     }
-
 }

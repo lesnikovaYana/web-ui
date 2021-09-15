@@ -47,5 +47,4 @@ public class LoginPage extends Base{
         loginButton.click();
         return new HomePage(driver);
     }
-
 }
