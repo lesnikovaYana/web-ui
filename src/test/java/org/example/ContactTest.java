@@ -22,5 +22,4 @@ public class ContactTest extends BaseTest{
                 .saveAndClose()
                 .checkNewContactPopUp();
     }
-
 }

@@ -27,4 +27,3 @@ public class ProjectTest extends BaseTest{
                 .checkNewProjectPopUp();
     }
 }
-

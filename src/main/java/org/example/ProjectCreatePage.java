@@ -133,6 +133,5 @@ public class ProjectCreatePage extends Base{
         saveButton.click();
         return new AllMyProjectPage(driver);
     }
-
 }
 
